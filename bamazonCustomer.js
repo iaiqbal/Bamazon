@@ -25,8 +25,7 @@ connection.connect(function(err) {
 });
 
 function store() {
-    inquirer
-        .prompt({
-            name:
-        })
+    connection.query("SELECT * FROM products", function(err, res) {
+        if(err) throw err;
+    });
 }

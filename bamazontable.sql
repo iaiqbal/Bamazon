@@ -27,4 +27,4 @@ VALUES
 ('Shoes', 'Clothing', 18, 30),
 ('Jacket', 'Clothing', 25, 42);
 
-SELECT * FROM products
+SELECT * FROM products;

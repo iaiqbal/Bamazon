@@ -1,5 +1,9 @@
 CREATE DATABASE bamazon;
 
+use mysql;
+update user set authentication_string=password(''), plugin='mysql_native_password' where user='root';
+
+
 CREATE TABLE products(
 	item_id INT(10) NOT NULL AUTO_INCREMENT,
     product_name VARCHAR(40) NOT NULL,

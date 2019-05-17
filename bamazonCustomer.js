@@ -75,3 +75,24 @@ function storeChoice() {
 
 });
 }
+
+const finishCheckout = function(stock, price, department, purcProductID, purcProductUnits) {
+    const newQuantity = stock - purcProductUnits;
+    const purcPrice = price * purcProductUnits
+
+    let query = "UPDATE products SET ? WHERE ?";
+    connection.query(query, [{
+        stock_quantity: newQuantity
+    },
+    {
+        item_id: purcProductID
+    }
+],
+function(err, res) {
+    if (err) throw err;
+    console.log("You have purchased this item. Congratulations!");
+    console.log("You have paid a total of: " + purcPrice);
+    
+}
+)
+}
